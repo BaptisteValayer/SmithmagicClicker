@@ -2,7 +2,6 @@
 ;---- Created by Baptiste Valayer -----;
 ;------------- 21/04/2020 -------------;
 
-KeyWait, Control
 firstUse = 1
 MergedX = 0
 MergedY = 0
@@ -24,9 +23,11 @@ return
 XButton2:: 
     coordmode,caret,screen
     coordmode,mouse,screen
-    Send, {Control down}
-    MouseClick, left, %A_CaretX%, %A_CaretY%
-    Send, {Control up}
+    Send, {LControl down}
+    Sleep 20
+    MouseClick, left, %A_CaretX%, %A_CaretY%, 2
+    Sleep 20
+    Send, {LControl up}
 return
 XButton1::
     MouseGetPos, StartX, StartY
